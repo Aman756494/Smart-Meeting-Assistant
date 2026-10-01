@@ -4,9 +4,16 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Home() {
-
   const [username, setUsername] = useState("");
   const router = useRouter();
+  
+  const handleJoin  = () => {
+    const name = username.trim() === "" ? "Annonymous" : username.trim();
+    
+    const meetingId = process.env.NEXT_PUBLIC_CALL_ID;
+
+    router.push(` /meeting/${meetingId}?name=${encodeURIComponent(name)}`);
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-gray-900 via -gray-800 to-gray-900 text-white">
@@ -22,7 +29,11 @@ export default function Home() {
           onChange={(e) => setUsername(e.target.value)}
         ></input>
 
-      <button className="mt-5 w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium">Join Meeting</button>
+        <button
+          onClick={handleJoin}
+          className="mt-5 w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium">
+          Join Meeting
+        </button>
       </div>
     </div>
   );
