@@ -23,7 +23,7 @@ export async function POST(request) {
       name: userId,
     };
 
-    await serverClient.upsertUsers(newUser);
+    await serverClient.upsertUsers([newUser]);
 
     const validity = 60 * 60 * 24;
     const token = serverClient.generateUserToken({
