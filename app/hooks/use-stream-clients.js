@@ -1,8 +1,9 @@
-import { StreamVideoClient } from "@stream-io/node-sdk";
+
+import { StreamVideoClient } from "@stream-io/video-react-sdk";
 import { useEffect, useState } from "react";
 import { StreamChat } from "stream-chat";
 
-export function userStreamClients({ apiKey, user, token }) {
+export function useStreamClients({ apiKey, user, token }) {
   const [videoClient, setVideoClient] = useState(null);
   const [chatClient, setChatClient] = useState(null);
 

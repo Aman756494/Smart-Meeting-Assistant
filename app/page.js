@@ -12,11 +12,11 @@ export default function Home() {
     
     const meetingId = process.env.NEXT_PUBLIC_CALL_ID;
 
-    router.push(` /meeting/${meetingId}?name=${encodeURIComponent(name)}`);
+    router.push(`/meeting/${meetingId}?name=${encodeURIComponent(name)}`);
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-gray-900 via -gray-800 to-gray-900 text-white">
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <div className="p-8 bg-gray-800/60 rounded-2xl border border-gray-700 w-80 shadow-2xl ">
         <h2 className="text-xl font-semibold mb-4 text-center">
           Enter your name

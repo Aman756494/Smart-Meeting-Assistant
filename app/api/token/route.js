@@ -1,5 +1,4 @@
 import { StreamClient } from "@stream-io/node-sdk";
-import { name } from "@stream-io/video-react-sdk";
 
 const apiKey = process.env.STREAM_API_KEY;
 const apiSecret = process.env.STREAM_API_SECRET;
