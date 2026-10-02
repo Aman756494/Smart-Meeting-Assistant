@@ -1,5 +1,6 @@
 "use client";
 
+import MeetingRoom from "@/app/components/meeting-room";
 import StreamProvider from "@/app/components/stream-provider";
 import { StreamTheme } from "@stream-io/video-react-sdk";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
@@ -67,12 +68,17 @@ const MeetingPage = () => {
     );
   }
 
+  const handleLeave = () => {
+    router.push("/");
+  };
+
   return (
     <StreamProvider user={user} token={token}>
-      <StreamTheme>Meeting Room</StreamTheme>
+      <StreamTheme>
+        <MeetingRoom callId={callId} onLeave={handleLeave} userId={user.id} />
+      </StreamTheme>
     </StreamProvider>
   );
-
 };
 
 export default MeetingPage;
