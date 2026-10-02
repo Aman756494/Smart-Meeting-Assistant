@@ -22,12 +22,15 @@ export async function POST(request) {
       name: userId,
     };
 
-    await serverClient.upsertUsers([newUser]);
+      await serverClient.upsertUsers([newUser]);
+      
+      const now = Math.floor(Date.now() / 1000); // current time in seconds
 
     const validity = 60 * 60 * 24;
     const token = serverClient.generateUserToken({
       user_id: userId,
-      validity_in_seconds: validity,
+        validity_in_seconds: validity,
+      iat: now - 60, // Issue token 60 seconds in the past (fixes timing issues)
     });
 
     return Response.json({ token });
