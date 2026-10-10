@@ -1,0 +1,24 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Aman756494", email = "kraman9262@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "getstream[telemetry,webrtc]>=2.5.0,<3",
+    "python-dotenv>=1.2.4",
+    "vision-agents-plugins-gemini==0.2.2",
+    "vision-agents-plugins-getstream==0.2.2",
+    "vision-agents[gemini,getstream]==0.2.2",
+]
+
+[project.scripts]
+backend = "backend:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
