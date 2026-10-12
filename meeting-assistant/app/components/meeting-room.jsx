@@ -8,6 +8,7 @@ import {
 } from "@stream-io/video-react-sdk";
 import React, { useEffect, useRef, useState } from "react";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
+import TranscriptPnael from "./transcript";
 
 const MeetingRoom = ({ callId, onLeave, userId }) => {
   const client = useStreamVideoClient();
@@ -109,7 +110,7 @@ const MeetingRoom = ({ callId, onLeave, userId }) => {
 
           {/* Transcription */}
           <div className="bg-gray-800 rounded-2xl border-gray-700 overflow-hidden shadow-2xl">
-            Transcripts
+             <TranscriptPnael></TranscriptPnael>
           </div>
         </div>
       </div>
