@@ -246,8 +246,8 @@ def print_meeting_summary():
     Print the meeting summary
     """
     logger.info("📝 Meeting Summary:")
-    full_transcript = " ".join(meeting_data["transcript"])
-    logger.info(full_transcript)
+    for entry in meeting_data['transcript']:
+        print(f"[{entry['speaker']}]: {entry['text']}")
 
 
 if __name__ == "__main__":
