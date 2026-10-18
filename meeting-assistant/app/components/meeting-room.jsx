@@ -57,6 +57,7 @@ const MeetingRoom = ({ callId, onLeave, userId }) => {
         call.leave().catch(() => {});
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [client, callId, userId]);
 
   if (error)
